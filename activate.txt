@@ -1,0 +1,4 @@
+python -m venv venv
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.\venv\Scripts\Activate.ps1
+python -m flask --app board run --port 5500 --debug
