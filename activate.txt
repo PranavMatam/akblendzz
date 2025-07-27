@@ -2,3 +2,11 @@ python -m venv venv
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\venv\Scripts\Activate.ps1
 python -m flask --app board run --port 5500 --debug
+
+git:
+cd "C:/Users/25ravpr/OneDrive - Goodnews Lutheran College/2025/sd/AK Blendzz project/website"
+git status
+git add .
+git commit -m "Update: [describe what you changed here]"
+git push
+
