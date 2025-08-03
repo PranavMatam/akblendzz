@@ -11,9 +11,6 @@ def login():
 def sign_up():
     return render_template('pages/sign_up.html')
 
-@bp.route('/home')
-def home():
-    return render_template('pages/home.html')
 
 @bp.route('/about')
 def about():
