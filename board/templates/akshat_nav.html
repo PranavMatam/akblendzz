@@ -2,12 +2,12 @@
 	<img src="{{ url_for('static', filename='imgs/logo.png') }}" class="nav-logo" alt="Left Logo">
 
 	<ul class="nav-links">
-		<li><a href="">About</a></li>
-		<li><a href="">Gallery</a></li>
-		<li><a href="">Booking</a></li>
-		<li><a href="">Clients</a></li>
-		<li><a href="">Timetable</a></li>
-		<li><a href="">Finance Report</a></li>
+		<li><a href="{{ url_for('pages.about') }}">About</a></li>
+		<li><a href="{{ url_for('pages.gallery') }}">Gallery</a></li>
+		<li><a href="{{ url_for('pages.booking') }}">Booking</a></li>
+		<li><a href="{{ url_for('pages.clients') }}">Clients</a></li>
+		<li><a href="{{ url_for('pages.timetable') }}">Timetable</a></li>
+		<li><a href="{{ url_for('pages.finance_report') }}">Finance Report</a></li>
 	</ul>
 
 	<img src="{{ url_for('static', filename='imgs/logo.png') }}" class="nav-logo" alt="Right Logo">
