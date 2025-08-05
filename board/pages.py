@@ -26,7 +26,38 @@ def booking():
 
 @bp.route('/clients')
 def clients():
-    return render_template('pages/clients.html')
+    clients = [
+        {
+            "name": "Vivaan Gupta",
+            "phone":"0400 123 456",
+            "num_visits": 5,
+            "service_type": "Fade",
+            "last_visit": "2025-08-01"
+        },
+        {
+            "name": "Suddy Hosur",
+            "phone":"0400 123 456",
+            "num_visits": 5,
+            "service_type": "Fade",
+            "last_visit": "2025-08-01"
+        },
+        {
+            "name": "Suddy Hosur",
+            "phone":"0400 123 456",
+            "num_visits": 5,
+            "service_type": "Fade",
+            "last_visit": "2025-08-01"
+        },
+        {
+            "name": "Suddy Hosur",
+            "phone":"0400 123 456",
+            "num_visits": 5,
+            "service_type": "Fade",
+            "last_visit": "2025-08-01"
+        }
+    ]
+
+    return render_template('pages/clients.html', clients=clients)
 
 @bp.route('/timetable')
 def timetable():

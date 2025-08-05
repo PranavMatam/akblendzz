@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-{% include("akshat_nav.html") %} 
-<section>
-    <main>
-    </main>
-</section>
+    {% include("akshat_nav.html") %} 
+    {% block content %}{% endblock content %}
 </body>
 </html>

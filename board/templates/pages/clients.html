@@ -1,9 +1,54 @@
 {% extends 'base.html' %}
 
-<!-- {% block header %}
-    <h2>{% block title %}About{% endblock title %}</h2>
-{% endblock header %}
+{% block title %}Clients{% endblock title %}
 
 {% block content %}
-    <p>This is a messsage board for friendly messages.</p>
-{% endblock content %} -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='client_style.css') }}">
+
+    <div class="client-page">
+
+        <div class="filter-bar">
+            <div class="sort-section">
+            <label for="sort">Sort by:</label>
+            <select id="sort" name="sort">
+                <option value="name">Name</option>
+                <option value="date">Date (Booking)</option>
+                <option value="service">Service Type</option>
+            </select>
+            </div>
+
+            <div class="filters">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="service">Service type:</label>
+            <select id="service" name="service">
+                <option value="Fade">Fade</option>
+                <option value="Beard">Beard</option>
+                <option value="Fade+Beard">Fade + Beard</option>
+            </select>
+
+            <label for="visits">No. of visits:</label>
+            <input type="number" id="visits" name="visits" min="0">
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="client-cards">
+            {% for client in clients %}
+            <div class="client-card">
+            <p><strong>Client Name:</strong> {{ client.name }}</p>
+            <p><strong>Client Phone:</strong> {{ client.phone }}</p>
+            <p><strong>No. of Visits:</strong> {{ client.num_visits }}</p>
+            <p><strong>Service Type:</strong> {{ client.service_type }}</p>
+            <p><strong>Last Visit:</strong> {{ client.last_visit }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

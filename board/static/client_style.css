@@ -1,0 +1,75 @@
+body {
+    background-color: #5e5e5e;
+}
+
+.client-page {
+    padding-top: 7vw;
+}
+
+body.client-page {
+    background-color: #5e5e5e;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 2%;
+}
+
+.filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    margin-left: 2%;
+}
+
+.sort-section,
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+label {
+    color: black;
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+input, select {
+    padding: 0.5em;
+    font-size: 1vw;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.client-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1%;
+}
+
+.client-card {
+    background-color: white;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 30%;
+    height: 20%;
+    font-size: 1.1vw;
+    flex: 1 1 28%;  /* Adjust this % to fit 3 per row with spacing */
+    min-width: 250px;
+    max-width: 32%;
+    box-sizing: border-box;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: black;
+    margin: 2vw 0;
+}
+
+
+

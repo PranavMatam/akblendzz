@@ -1,9 +1,41 @@
 {% extends 'base.html' %}
 
-<!-- {% block header %}
-    <h2>{% block title %}About{% endblock title %}</h2>
-{% endblock header %}
+{% block title %}Booking{% endblock title %}
 
 {% block content %}
-    <p>This is a messsage board for friendly messages.</p>
-{% endblock content %} -->
+    <body class="booking-page">
+        <div class="booking-section">
+            <div class="booking-form">
+                <h2>Full Name</h2>
+                <input type="text" placeholder="Enter your full name">
+
+                <h2>Phone Number</h2>
+                <input type="text" placeholder="Enter your phone number">
+
+                <h2>Service Selection</h2>
+                <select>
+                    <option>Select a service</option>
+                    <option>Scissors</option>
+                    <option>Fade</option>
+                    <option>Beard</option>
+                    <option>fj</option>
+                    <option>All</option>
+                </select>
+
+                <h2>
+                    Preferred Time slot
+                    <a href="/availability" class="availability-link">View availability</a>
+                </h2>
+                <select>
+                    <option>Select a time slot</option>
+                    <!-- Populate dynamically -->
+                </select>
+
+                <h2>Optional Notes</h2>
+                <textarea rows="4" placeholder="Any additional details..."></textarea>
+
+                <button class="book-now">Book Now</button>
+            </div>
+        </div>
+    </body>
+{% endblock content %}
