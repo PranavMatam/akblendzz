@@ -1,3 +1,68 @@
 {% extends 'base.html' %}
 
-{% block title %}Finance Report{% endblock title %}
+{% block title %}Finance Report{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<div class="finance-page">
+    <div class="finance-header">
+        <label for="filter">Filter:</label>
+        <select id="filter" name="filter">
+            <option value="day">Day</option>
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+        </select>
+    </div>
+
+    <!-- 1x3 Table for Revenue Summary -->
+    <table class="finance-table summary-table">
+        <tr>
+            <th>Total Revenue</th>
+            <th>Total Appointments</th>
+            <th>Average revenue per Client</th>
+        </tr>
+        <tr>
+            <td>$2,300</td>
+            <td>48</td>
+            <td>$47.91</td>
+        </tr>
+    </table>
+
+    <div class="finance-tables">
+
+        <!-- 8x3 Table for Daily Breakdown -->
+        <div class="table-section">
+            <table class="finance-table">
+                <tr>
+                    <th>Day</th>
+                    <th>Appointments</th>
+                    <th>Total Revenue</th>
+                </tr>
+                <tr><td>Monday</td><td>8</td><td>$400</td></tr>
+                <tr><td>Tuesday</td><td>6</td><td>$300</td></tr>
+                <tr><td>Wednesday</td><td>7</td><td>$350</td></tr>
+                <tr><td>Thursday</td><td>5</td><td>$250</td></tr>
+                <tr><td>Friday</td><td>9</td><td>$500</td></tr>
+                <tr><td>Saturday</td><td>10</td><td>$400</td></tr>
+                <tr><td>Sunday</td><td>3</td><td>$100</td></tr>
+            </table>
+        </div>
+
+        <!-- 4x3 Table for Services -->
+        <div class="table-section">
+            <table class="finance-table">
+                <tr>
+                    <th>Service</th>
+                    <th>Times Booked</th>
+                    <th>Total Revenue</th>
+                </tr>
+                <tr><td>Fade</td><td>20</td><td>$800</td></tr>
+                <tr><td>Beard</td><td>15</td><td>$600</td></tr>
+                <tr><td>Fade + Beard</td><td>13</td><td>$900</td></tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

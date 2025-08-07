@@ -61,9 +61,44 @@ def clients():
 
 @bp.route('/timetable')
 def timetable():
-    return render_template('pages/timetable.html')
+    time_slots = [
+        "4:00 - 4:30", "4:30 - 5:00", "5:00 - 5:30", 
+        "5:30 - 6:00", "6:00 - 6:30", "6:30 - 7:00", 
+        "7:00 - 7:30"
+    ]
+
+    schedule = {
+        "Monday": {
+            "4:00 - 4:30": {"status": "requested", "clients": ["Client 1", "Client 2", "Client 3"]},
+            "4:30 - 5:00": {"status": "requested", "clients": ["Client 4"]},
+            "5:00 - 5:30": {"status": "available"},
+            "6:30 - 7:00": {"status": "booked"},
+            "7:00 - 7:30": {"status": "booked"},
+        },
+        # You can add other days similarly
+    }
+
+    # Set all empty cells to "available"
+    for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']:
+        schedule.setdefault(day, {})
+        for slot in time_slots:
+            schedule[day].setdefault(slot, {"status": "available"})
+
+    return render_template("pages/timetable.html", time_slots=time_slots, schedule=schedule)
+
 
 @bp.route('/finance_report')
 def finance_report():
-    return render_template('pages/finance_report.html')
+    days = [
+        {"name": "Monday", "appointments": 5, "revenue": 150},
+        {"name": "Tuesday", "appointments": 3, "revenue": 90},
+        # ...
+    ]
+    services = [
+        {"name": "Fade", "bookings": 10, "revenue": 300},
+        {"name": "Beard", "bookings": 5, "revenue": 150},
+        {"name": "Fade + Beard", "bookings": 3, "revenue": 120},
+    ]
+    return render_template("pages/finance_report.html", days=days, services=services)
+
 

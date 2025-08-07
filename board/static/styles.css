@@ -228,6 +228,187 @@ body.booking-page {
 }
 
 
+/* timetable */
+#timetable {
+    background-color: #5e5e5e;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 
+.timetable-container {
+    padding: 3vw;
+    overflow-x: auto;
+    margin-top: 5%;
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+
+th, td {
+    border: 2px solid white;
+    padding: 1vw;
+    color: white;
+}
+
+th {
+    background-color: black;
+    font-size: 1.3vw;
+}
+
+.time-label {
+    background-color: black;
+    font-weight: bold;
+    width: 10%;
+}
+
+.slot {
+    height: 4vw;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Color states */
+.slot.available {
+    background-color: #00cc66;
+}
+
+.slot.booked {
+    background-color: #ab0000;
+    cursor: not-allowed;
+}
+
+.slot.requested {
+    background-color: #0066cc;
+}
+
+/* Tooltip */
+.slot.requested:hover .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: 0.9vw;
+    text-align: left;
+    z-index: 10;
+}
+
+/* Updated Finance Report Styles */
+.finance-page {
+    background-color: #5e5e5e;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 2vw 3vw;
+    min-height: 100vh;
+}
+
+.finance-header {
+    margin-top: 7vw;
+    margin-bottom: 2vw;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.finance-header label {
+    font-size: 2vw;
+    font-weight: bold;
+    color: black;
+}
+
+.finance-header select {
+    padding: 0.5vw;
+    font-size: 1.1vw;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Summary boxes styled and aligned properly */
+.finance-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+    margin-bottom: 3vw;
+}
+
+.summary-box {
+    flex: 1;
+    background-color: #ab0000;
+    color: black;
+    text-align: center;
+    padding: 2.5vw 1vw;
+    font-size: 1.4vw;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+/* Table section improved */
+.finance-tables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+    justify-content: space-between;
+}
+
+.table-section {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+/* Table Styling */
+.finance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 1vw;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.finance-table th {
+    background-color: #ab0000;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2vw;
+    padding: 1vw;
+    border: 2px solid black;
+}
+
+.finance-table td {
+    padding: 0.9vw;
+    text-align: center;
+    border: 2px solid black;
+    font-size: 1vw;
+}
+
+/* Summary table (1x3) styling */
+.summary-table {
+    margin-bottom: 3vw;
+    width: 100%;
+    table-layout: fixed;
+}
+.summary-table th {
+    font-size: 1.5vw;
+}
+.summary-table td {
+    font-size: 1.3vw;
+}
+
+.finance-table th,
+.finance-table td {
+    color: black;
+}
 
 

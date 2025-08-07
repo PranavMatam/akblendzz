@@ -1,3 +1,49 @@
 {% extends 'base.html' %}
 
 {% block title %}Timetable{% endblock title %}
+
+{% block content %}
+    <body id="timetable">>
+        <link rel="stylesheet" href="{{ url_for('static', filename='timetable_style.css') }}">
+
+        <div class="timetable-container">
+        <table class="timetable">
+        <thead>
+            <tr>
+            <th></th>
+            {% for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                <th>{{ day }}</th>
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for slot in time_slots %}
+            <tr>
+                <td class="time-label">{{ slot }}</td>
+                {% for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                {% set cell = schedule.get(day, {}).get(slot) %}
+                <td class="slot {{ cell.status }}" onclick="handleClick('{{ cell.status }}', '{{ day }}', '{{ slot }}')">
+                    {% if cell.status == 'requested' %}
+                    <div class="tooltip">
+                        {% for client in cell.clients %}
+                        <p>{{ client }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        </div>
+
+        <script>
+        function handleClick(status, day, slot) {
+        if (status !== 'booked') {
+            window.location.href = `/booking?day=${day}&slot=${encodeURIComponent(slot)}`;
+        }
+        }
+        </script>
+    </body>
+{% endblock content %}
